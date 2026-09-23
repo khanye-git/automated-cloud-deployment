@@ -130,3 +130,9 @@ jobs:
 
       - name: Initialize Terraform Remote State
         run: terraform init -lockfile=readonly
+
+      - name: Terraform Plan
+        env:
+          TF_VAR_db_password: ${{ secrets.TF_VAR_db_password }}
+          TF_IN_AUTOMATION: "true"
+        run: terraform plan -input=false -no-color
