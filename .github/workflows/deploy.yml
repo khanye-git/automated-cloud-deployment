@@ -121,8 +121,8 @@ jobs:
 
       - name: Check Terraform formatting
         run: terraform fmt -check
-	
-	      - name: Configure AWS credentials
+
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::269985663638:role/GitHubActions-Capstone-Role
